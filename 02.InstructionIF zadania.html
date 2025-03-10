@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instrukcja IF</title>
+</head>
+<body>
+    <script>
+        /*
+            Zasady:
+                * DRY - don't repeat yourself
+                * KISS - keept it simple, stupid
+                * YAGNI - you aren't gonna need it
+                * SOLID
+        */
+
+        /*
+            Operatory porównania:
+            > - większe
+            < - mniejsze
+            >= - większe bądź równe
+            <= - mniejsze bądź równe
+            == - równe
+            === - równe muszą być też typy
+            != - różne
+            !== - różne ale te same typy
+
+            Operatory logiczne:
+            && - and
+            || - or
+            ! - not
+
+            a   b       a && b      a || b      !a
+            F   F          F           F         T
+            F   T          F           T         T
+            T   F          F           T         F
+            T   T          T           T         F
+
+        Wzór:
+
+        BMI = masa/wysokość^2
+
+        *. Napisz program, który poprosi użytkownika o podanie długości trzech odcinków i sprawdzi, czy można zbudować z nich trójkąt. Wyświetl odpowiedni komunikat.
+        *. Napisz program, który poprosi użytkownika o podanie liczby dodatniej i obliczy jej pierwiastek kwadratowy, jeśli jest to możliwe. Wyświetl wynik lub odpowiedni komunikat, jeśli liczba jest ujemna.
+        *. Program sprawdzający czy podana data jest poprawna (np. sprawdzając, czy dzień jest z zakresu od 1 do 31, miesiąc od 1 do 12 itd.)
+
+        */
+
+        //Pobierz od użytkownika liczbę i wyświetl czy jest ona dodatnia czy ujemna
+        function task1()
+        {
+            var numberFromUser;
+
+            numberFromUser = 5;
+
+            if (numberFromUser >= 0) 
+            {
+                document.writeln("Liczba jest dodatnia <br/>");
+            }
+
+            if (numberFromUser < 0)
+                document.writeln("Liczba jest ujemna <br/>");
+
+            if (numberFromUser >= 0) 
+                document.writeln("Liczba jest dodatnia <br/>");
+            else
+                document.writeln("Liczba jest ujemna <br/>");
+        }
+
+        //Napisz program,
+        //który wyświetli informacje czy liczba jest parzysta czy nieparzysta.
+        function task2()
+        {
+            var numberFromUser = 89;
+
+            var rest = numberFromUser % 2;
+
+            if (rest == 0)
+                document.write("Liczba parzysta<br/>");
+            else
+                document.write("Liczba nieparzysta<br/>");
+        }
+
+        //Napisz program, który wyświetli informacje 
+        //czy liczba jest z zakresu <1 ; 10).
+        function task3()
+        {
+            var number = 78;
+
+            //wersja 1
+            if (number >= 1)
+            {
+                if (number < 10)
+                    document.write("Liczba jest z przedziału<br/>");
+                else
+                    document.write("Liczba spoza przedziału<br/>");
+            }
+            else
+                document.write("Liczba spoza przedziału<br/>");
+
+            //wersja 2
+            if (number >= 1)
+                if (number < 10)
+                    document.write("Liczba jest z przedziału<br/>");
+                else
+                    document.write("Liczba spoza przedziału<br/>");
+            else
+                document.write("Liczba spoza przedziału<br/>");
+
+            //wersja 3
+            if (number >= 1 && number < 10)
+                    document.write("Liczba jest z przedziału<br/>");
+            else
+                document.write("Liczba spoza przedziału<br/>");
+
+            //wersja 4
+            if (!(number >= 1 && number < 10))
+                document.write("Liczba spoza przedziału<br/>");
+            else
+                document.write("Liczba jest z przedziału<br/>");
+                
+            //wersja 5
+            if (number < 1 || number >= 10)
+                document.write("Liczba spoza przedziału<br/>");
+            else
+                document.write("Liczba jest z przedziału<br/>");
+        }
+
+        /*. Napisz program, który wykona dzielenie dwóch liczb */
+        
+        function task4() {
+            var firstNumumber = 2
+            var secondNumber = 10
+
+            if (secondNumber =0) {
+                document.write("Nie dzieli się przez zero");
+            }
+            else {
+                result = firstNumumber / secondNumber 
+                document.write("Wynik dzielenia to"+result);
+            }
+        }
+
+        /*. Napisz program, który poprosi użytkownika o podanie dwóch liczb całkowitych i sprawdzi, czy są one równe. Wyświetl odpowiedni komunikat.*/
+        
+
+        /*. Napisz program, który poprosi użytkownika o podanie wieku i sprawdzi, czy osoba jest pełnoletnia. Wyświetl odpowiedni komunikat.*/
+        
+        function task5 (){
+            var numberFromUser = 20
+
+            if (numberFromUser >= 18){
+                document.write("Jesteś pełnoletni")
+            }
+            else {
+                document.write("Nie jesteś pełnoletni")
+            }
+        }
+
+        
+        /*. Napisz program, który poprosi użytkownika o podanie liczby całkowitej i obliczy jej wartość bezwzględną. Wyświetl wynik.*/
+       
+        /*. Napisz program, który poprosi użytkownika o podanie liczby od 1 do 7 i wyświetli odpowiadający mu dzień tygodnia.*/
+       
+        function task6(){
+            var firstNumumber = 1
+
+            if(firstNumumber = 1) {
+                document.write("Poniedziałek")
+            }
+            else if( firstNumumber = 2){
+                document.write("Wtorek")
+            }
+            else if( firstNumumber = 3){
+                document.write("Środa")
+            }
+            else if( firstNumumber = 4){
+                document.write("Czwartek")
+            }
+            else if( firstNumumber = 5){
+                document.write("Piątek")
+            }
+            else if( firstNumumber = 6){
+                document.write("Sobota")
+            }
+            else if( firstNumumber = 7){
+                document.write("Niedziela")
+            }
+            }
+
+        /*. Napisz program, który poprosi użytkownika o podanie dwóch liczb całkowitych i wyświetli większą z nich.*/
+
+        function task7(){
+            var firstNumberFromUser = 5
+            var secondNumberFromUser = 7
+
+            if (firstNumberFromUser > secondNumberFromUser){
+                document.write(firstNumberFromUser)
+            }
+            else if(firstNumberFromUser < secondNumberFromUser){
+                document.write(secondNumberFromUser)
+            }
+            else if(firstNumberFromUser = secondNumberFromUser){
+                document.write("Podane liczby są błędne")
+            }
+            else {
+                document.write("Błąd")
+            }
+        }
+
+       
+        /*. Napisz program, który poprosi użytkownika o podanie roku i sprawdzi, czy jest to rok przestępny. Wyświetl odpowiedni komunikat.*/
+       
+        /*. Napisz program, który poprosi użytkownika o podanie liczby całkowitej i sprawdzi, czy jest ona podzielna zarówno przez 3, jak i przez 5. Wyświetl odpowiedni komunikat.*/
+
+        /*. Napisz program, który poprosi użytkownika o podanie masy ciała (w kilogramach) i wzrostu (w metrach).*/
+        
+        /* Na  podstawie tych danych oblicz wskaźnik BMI (Body Mass Index) i wyświetl odpowiedni komunikat informujący o stanie zdrowia.
+        poniżej 16 - wygłodzenie
+        16 - 16.99 - wychudzenie
+        17 - 18.49 - niedowagę
+        18.5 - 24.99 - wagę prawidłową
+        25.0 - 29.9 - nadwagę
+        30.0 - 34.99 - I stopień otyłości
+        35.0 - 39.99 - II stopień otyłości
+        powyżej 40.0 - otyłość skrajną */
+
+    </script>
+</body>
+</html>
